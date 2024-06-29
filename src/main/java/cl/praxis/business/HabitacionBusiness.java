@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cl.praxis.model.Habitacion;
+import cl.praxis.model.Reservas;
 
 public class HabitacionBusiness {
 	List<Habitacion> habitaciones =  new ArrayList<Habitacion>();
@@ -24,6 +25,14 @@ public class HabitacionBusiness {
 	}
 	public List<Habitacion> allRooms(){
 		return habitaciones;
+	}
+	public Habitacion getById(int id) {
+		for(int i=0; i<=habitaciones.size();i++) {
+			if(habitaciones.get(i).getId()==id) {
+				return habitaciones.get(i);
+			}
+		}
+		return new Habitacion();
 	}
 	
 }

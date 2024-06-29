@@ -69,7 +69,7 @@
 				</div>
 			</div>
 		<div class="row">	
-		<div class="col-4">
+		<div class="col-3">
 		<label class="form-label" for="">Método de pago:</label>
 			<select class="form-control" name="pago">
   <option selected>Seleccionar el método de pago</option>
@@ -80,10 +80,10 @@
 </select>
 </div>
 
-<div class="col-4">
-<label class="form-label" for="">Días de reserva:</label>
+<div class="col-3">
+<label class="form-label" for="">Habitación a reservar:</label>
 <select class="form-control" name="dias">
-  <option selected>Seleccione los días de estancia:</option>
+  <option selected>Seleccione la habitación:</option>
    <c:forEach var="hbs" items="${habitacionBusiness}">
   <option value="${hbs.getNombre()}">${hbs.getNombre()}</option>
   </c:forEach>	
@@ -91,11 +91,24 @@
 </select>
 </div>
 
-				<div class="col-4">
+				<div class="col-3">
 					<label class="form-label" for="entrada">Fecha Entrada:</label> <input
 						class="form-control" type="date" id="entrada" name="entrada"
 						value="">
 				</div>
+				<div class="col-3">
+				<label class="form-label" for="entrada">Cantidad de días a reservar:</label>
+				<select class="form-select" aria-label="Default select example" name="habitacion">
+  <option selected>Seleccionar días</option>
+  <option value="1">Uno</option>
+  <option value="2">Dos</option>
+  <option value="3">Tres</option>
+  <option value="4">Cuatro</option>
+  <option value="5">Cinco</option>
+  <option value="6">Seis</option>
+  <option value="7">Abierto</option>
+</select>
+</div>
 			</div>
 			<div class="row pt-4 pb-4">
 				<div class="col">

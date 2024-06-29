@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.praxis.model.Habitacion;
 import cl.praxis.model.Reservas;
 
 @WebServlet("/Reservando")
@@ -29,7 +30,8 @@ public class Reservando extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		System.out.println(request.getParameter("monto"));
+		System.out.println(request.getParameter("habitacion"));
 		String name = (String)request.getParameter("name");
 		String lastName = (String)request.getParameter("lastName");
 		String email = (String)request.getParameter("email");
@@ -40,7 +42,8 @@ public class Reservando extends HttpServlet {
 		Reservas reserva = new Reservas( name, lastName, email,  medioPago,  dias,
 				 fechaEntrada,valor);
 		reservaBussines.addReserva(reserva);
-		request.setAttribute("reserva",reserva);
+		request.setAttribute("reservas",reserva);
+		request.setAttribute("habitacion",habitacionBusiness.getById(Integer.parseInt(request.getParameter("habitacion"))));
 		getServletContext().getRequestDispatcher("/proceso.jsp").forward(request, response);
 	}
 

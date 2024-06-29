@@ -9,7 +9,7 @@ public class Habitacion {
 	 private int habitaciones;
 	 private int metraje;
 	
-	 
+	 public Habitacion(){}
 	 public Habitacion(int id, String nombre, String descripcion, String imagen, int precio, int habitaciones,
 			int metraje) {
 		super();
